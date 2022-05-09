@@ -25,7 +25,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it    
       - uses: actions/checkout@v3
       - name: donwload driver
-        run: |
+        run:
           wget $(wget -q -O - https://chromedriver.storage.googleapis.com/ | grep -Eo "https:\/\/chromedriver\.storage\.googleapis\.com\/\d+.\d.\d+.\d+\/chromedriver_win32\.zip" | sort | tail -n1)
           
       - name: my-artifact
