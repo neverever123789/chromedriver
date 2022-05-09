@@ -27,6 +27,11 @@ jobs:
       - name: donwload driver
         run: |
           wget https://chromedriver.storage.googleapis.com/102.0.5005.27/chromedriver_win32.zip
+          
+      - name: my-artifact
+        uses: actions/upload-artifact@v3
+        with: 
+          name: chromedriver_win32.zip
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
