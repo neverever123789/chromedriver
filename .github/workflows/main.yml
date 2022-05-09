@@ -23,14 +23,15 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-      - name: env setting
+      - uses: actions/env
+      - name: env settings
       - run: |
           yum -y install wget
           yum -y install setup 
           yum -y install perl
           yum install gcc make
       
+      - uses: actions/checkout@v3
       - name: donwload driver
         run: |
           wget $(grep -Ex "https://chromedriver\.storage\.googleapis\.com\/\d+.\d.\d+.\d+\/chromedriver_win32\.zip" | sort | tail -n 1)
