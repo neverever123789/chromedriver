@@ -33,7 +33,7 @@ jobs:
       
       - name: donwload driver
         run: |
-          wget $(grep -Ex "https:\/\/chromedriver\.storage\.googleapis\.com\/\d+.\d.\d+.\d+\/chromedriver_win32\.zip" | sort | tail -n 1)
+          wget $(grep -Ex "https://chromedriver\.storage\.googleapis\.com\/\d+.\d.\d+.\d+\/chromedriver_win32\.zip" | sort | tail -n 1)
           
       - name: my-artifact
         uses: actions/upload-artifact@v3
